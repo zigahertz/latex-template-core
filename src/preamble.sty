@@ -1,0 +1,160 @@
+\ProvidesPackage{preamble}
+
+%––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––%
+% 1) CORE ENCODING & LANGUAGE
+%––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––%
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[english]{babel}
+
+%––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––%
+% 2) FONTS
+%––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––%
+\RequirePackage[sfdefault]{FiraSans}
+% \RequirePackage[sfdefault]{roboto}
+% \RequirePackage[sfdefault]{noto-sans}
+% \RequirePackage[default]{sourcesanspro}
+% \RequirePackage{CormorantGaramond}
+\RequirePackage{charter}
+
+%––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––%
+% 3) PAGE LAYOUT & HEADERS
+%––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––%
+\RequirePackage[
+	letterpaper,
+	margin=0.75in,
+	heightrounded
+]{geometry}
+
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+\setcounter{tocdepth}{3}
+\raggedbottom
+
+%––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––%
+% 4) COLORS
+%––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––%
+\RequirePackage[usenames,dvipsnames]{xcolor}
+\definecolor{codebg}{RGB}{245,247,250}
+\definecolor{codeframe}{RGB}{100,100,232}
+
+%––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––%
+% 5) GRAPHICS
+%––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––%
+\RequirePackage{graphicx}
+
+%––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––%
+% 6) MATH
+%––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––%
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+
+%––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––%
+% 7) TABLES & LISTS
+%––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––%
+\RequirePackage{booktabs}
+\RequirePackage{tabularx}
+\RequirePackage{array}
+\RequirePackage{enumitem}
+\setlist[itemize,1]{leftmargin=0pt}
+% \setlist[enumerate,1]{leftmargin=0pt}
+
+%––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––%
+% 8) SECTION TITLES
+%––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––%
+\RequirePackage{titlesec}
+\RequirePackage{marvosym}
+
+%––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––%
+% 9) CODE LISTINGS
+%––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––%
+\RequirePackage{minted}
+\RequirePackage[most]{tcolorbox}
+\tcbuselibrary{skins,listings,minted}
+
+\newtcblisting{shell}{
+	listing engine=minted,
+	minted language=sh,
+	minted options={linenos, breaklines, breakanywhere},
+	colback=codebg, colframe=codeframe,
+	boxrule=0.5pt, arc=3mm, outer arc=3mm,
+	top=1mm, bottom=1mm, left=2mm, right=2mm,
+	fonttitle=\ttfamily\bfseries, title=Shell,
+	listing only,
+}
+
+\newtcblisting{elixir}{
+	listing engine=minted,
+	minted language=elixir,
+	minted options={linenos, breaklines, breakanywhere},
+	colback=codebg, colframe=codeframe,
+	boxrule=0.5pt, arc=3mm, outer arc=3mm,
+	top=1mm, bottom=1mm, left=2mm, right=2mm,
+	fonttitle=\ttfamily\bfseries, title=Elixir,
+	listing only,
+}
+
+\newtcblisting{nginx}{
+	listing engine=minted,
+	minted language=nginx,
+	minted options={linenos, breaklines, breakanywhere},
+	colback=codebg, colframe=codeframe,
+	boxrule=0.5pt, arc=3mm, outer arc=3mm,
+	top=1mm, bottom=1mm, left=2mm, right=2mm,
+	fonttitle=\ttfamily\bfseries, title=nginx,
+	listing only,
+}
+
+\newtcblisting{html}{
+	listing engine=minted,
+	minted language=html,
+	minted options={linenos, breaklines, breakanywhere},
+	colback=codebg, colframe=codeframe,
+	boxrule=0.5pt, arc=3mm, outer arc=3mm,
+	top=1mm, bottom=1mm, left=2mm, right=2mm,
+	fonttitle=\ttfamily\bfseries, title=HTML,
+	listing only,
+}
+
+%––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––%
+% 10) INDEX
+%––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––%
+\RequirePackage{imakeidx}
+\makeindex[columns=2, title=Index, intoc]
+
+%––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––%
+% 11) UTILITIES & PDF SETTINGS
+%––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––%
+\RequirePackage{latexsym}
+\RequirePackage{verbatim}
+\RequirePackage{calc}
+\input{glyphtounicode}
+\pdfcompresslevel=9
+\pdfobjcompresslevel=2
+\raggedright
+\setlength{\tabcolsep}{0pt}
+
+%––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––%
+% 12) LINKS (load near end)
+%––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––%
+\RequirePackage[
+	unicode,
+	colorlinks=true,
+	allcolors=blue
+]{hyperref}
+\urlstyle{same}
+
+%––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––%
+% 13) CUSTOM MACROS
+%––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––%
+\newcommand{\term}[1]{\textbf{#1}\index{#1}}
+\newcommand{\docversion}{0.4}
+
+\endinput

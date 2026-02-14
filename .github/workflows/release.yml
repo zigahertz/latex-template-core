@@ -1,0 +1,24 @@
+name: Build and Release PDF
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: texlive/texlive:latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build PDF
+        run: make
+
+      - name: Upload PDF to Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: build/main.pdf

@@ -1,0 +1,26 @@
+\documentclass[11pt,letterpaper]{article}
+
+% Load custom preamble
+\usepackage{preamble}
+
+% Subfiles package for modular documents
+\usepackage{subfiles}
+
+\title{INSERT TITLE}
+\author{INSERT AUTHOR}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+% Include subfiles
+\subfile{sections/one.tex}
+\subfile{sections/two.tex}
+% include more sections as needed
+
+\printindex
+
+\end{document}
