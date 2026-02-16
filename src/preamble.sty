@@ -142,7 +142,7 @@
 \setlength{\tabcolsep}{0pt}
 
 %––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––%
-% 12) LINKS (load near end)
+% 12) LINKS & BIBLIOGRAPHY
 %––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––%
 \RequirePackage[
 	unicode,
@@ -150,6 +150,13 @@
 	allcolors=blue
 ]{hyperref}
 \urlstyle{same}
+
+\RequirePackage[
+    backend=biber,
+    style=numeric,
+    sorting=nyt,
+    urldate=long
+]{biblatex}
 
 %––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––%
 % 13) CUSTOM MACROS
